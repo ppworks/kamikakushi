@@ -15,4 +15,12 @@ RSpec.describe Kamiakushi do
       }.to change(post, :deleted_at).from(nil)
     end
   end
+
+  describe '#destroyed?' do
+    it do
+      expect {
+        post.destroy
+      }.to change(post, :destroyed?).from(false).to(true)
+    end
+  end
 end
