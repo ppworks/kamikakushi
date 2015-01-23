@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kami_kakushi (0.0.1)
+    kamikakushi (0.0.1)
       rails (~> 4.1.9)
 
 GEM
@@ -190,7 +190,7 @@ DEPENDENCIES
   database_rewinder
   factory_girl_rails
   faker
-  kami_kakushi!
+  kamikakushi!
   launchy
   poltergeist
   pre-commit

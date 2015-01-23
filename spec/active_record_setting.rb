@@ -1,10 +1,10 @@
 require 'rails/all'
-require 'kami_kakushi'
+require 'kamikakushi'
 ActiveRecord::Base.configurations = {'test' => {:adapter => 'sqlite3', :database => ':memory:'}}
 ActiveRecord::Base.establish_connection :test
 
 class Post < ActiveRecord::Base
-  include KamiKakushi
+  include Kamiakushi
 end
 
 class CreateAllTables < ActiveRecord::Migration

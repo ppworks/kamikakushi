@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe KamiKakushi do
+RSpec.describe Kamiakushi do
   let!(:post) { Post.create(title: 'demo') }
 
   describe 'select record' do

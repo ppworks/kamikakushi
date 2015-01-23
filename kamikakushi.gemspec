@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "kami_kakushi/version"
+require "kamikakushi/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "kami_kakushi"
-  s.version     = KamiKakushi::VERSION
+  s.name        = "kamikakushi"
+  s.version     = Kamiakushi::VERSION
   s.authors     = ["ppworks"]
   s.email       = ["koshikawa.naoto@moneyforward.co.jp"]
   s.homepage    = "http://corp.moneyforward.com/"
