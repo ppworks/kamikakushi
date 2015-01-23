@@ -1,7 +1,7 @@
 # Kamikakushi
 
 ```
-class Post
+class Post < ActiveRecord::Base
   include Kamikakushi
 end
 ```
