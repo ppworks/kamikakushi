@@ -24,4 +24,15 @@ RSpec.describe Kamiakushi do
       }.to change(post, :destroyed?).from(false).to(true)
     end
   end
+
+  describe '#restore' do
+    before { post.destroy }
+
+    it do
+      expect {
+        post.restore
+        post.reload
+      }.to change(post, :destroyed?).from(true).to(false)
+    end
+  end
 end

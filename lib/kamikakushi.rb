@@ -14,4 +14,8 @@ module Kamiakushi
   def destroyed_with_kamikakushi?
     self.deleted_at? || destroyed_without_kamikakushi?
   end
+
+  def restore
+    update_column(:deleted_at, self.deleted_at = nil)
+  end
 end
