@@ -12,6 +12,7 @@ RSpec.describe Kamiakushi do
     it do
       expect {
         post.destroy
+        post.reload
       }.to change(post, :deleted_at).from(nil)
     end
   end

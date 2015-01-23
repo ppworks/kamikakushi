@@ -8,7 +8,7 @@ module Kamiakushi
   end
 
   def destroy_with_kamikakushi
-    self.deleted_at = Time.current
+    update_column(:deleted_at, Time.current)
   end
 
   def destroyed_with_kamikakushi?
