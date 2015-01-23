@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "hide_away/version"
+require "kami_kakushi/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "hide_away"
-  s.version     = HideAway::VERSION
+  s.name        = "kami_kakushi"
+  s.version     = KamiKakushi::VERSION
   s.authors     = ["ppworks"]
   s.email       = ["koshikawa.naoto@moneyforward.co.jp"]
   s.homepage    = "http://corp.moneyforward.com/"

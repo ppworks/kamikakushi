@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hide_away (0.0.1)
+    kami_kakushi (0.0.1)
       rails (~> 4.1.9)
 
 GEM
@@ -190,7 +190,7 @@ DEPENDENCIES
   database_rewinder
   factory_girl_rails
   faker
-  hide_away!
+  kami_kakushi!
   launchy
   mysql2
   poltergeist

@@ -9,7 +9,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require "hide_away"
+require "kami_kakushi"
 
 module Dummy
   class Application < Rails::Application

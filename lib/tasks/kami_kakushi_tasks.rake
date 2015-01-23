@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :hide_away do
+# task :kami_kakushi do
 #   # Task goes here
 # end
