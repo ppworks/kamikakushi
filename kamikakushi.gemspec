@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.name        = "kamikakushi"
   s.version     = Kamiakushi::VERSION
   s.authors     = ["ppworks"]
-  s.email       = ["koshikawa.naoto@moneyforward.co.jp"]
-  s.homepage    = "http://corp.moneyforward.com/"
+  s.email       = ["koshikawa@ppworks.jp"]
+  s.homepage    = "http://ppworks.jp"
   s.summary     = "Hide away record as soft delete"
   s.description = "Hide away record as soft delete"
   s.license     = "MIT"
