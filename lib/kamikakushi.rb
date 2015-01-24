@@ -30,4 +30,8 @@ module Kamiakushi
   def restore
     update_column(:deleted_at, self.deleted_at = nil)
   end
+
+  def destroy!
+    destroy_without_kamikakushi
+  end
 end

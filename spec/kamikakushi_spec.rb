@@ -18,6 +18,15 @@ RSpec.describe Kamiakushi do
     end
   end
 
+  describe 'real delete' do
+    it do
+      expect {
+        post.destroy!
+        post.reload
+      }.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
+
   describe '#destroyed?' do
     it do
       expect {
