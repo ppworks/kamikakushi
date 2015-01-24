@@ -2,9 +2,21 @@ module Kamiakushi
   extend ActiveSupport::Concern
 
   included do
-    default_scope { where(deleted_at: nil) }
+    default_scope { without_deleted }
     alias_method_chain :destroy, :kamikakushi
     alias_method_chain :destroyed?, :kamikakushi
+
+    scope :with_deleted, -> {
+      unscope(where: :deleted_at)
+    }
+
+    scope :without_deleted, -> {
+      where(deleted_at: nil)
+    }
+
+    scope :only_deleted, -> {
+      with_deleted.where.not(deleted_at: nil)
+    }
   end
 
   def destroy_with_kamikakushi

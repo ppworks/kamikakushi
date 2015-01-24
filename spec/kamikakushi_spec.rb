@@ -2,6 +2,7 @@ require 'spec_helper'
 
 RSpec.describe Kamiakushi do
   let!(:post) { Post.create(title: 'demo') }
+  after { Post.with_deleted.delete_all }
 
   describe 'select record' do
     subject { Post.all.to_sql }
@@ -33,6 +34,28 @@ RSpec.describe Kamiakushi do
         post.restore
         post.reload
       }.to change(post, :destroyed?).from(true).to(false)
+    end
+  end
+
+  describe 'scope' do
+    let!(:deleted_post) { Post.create(title: 'deleted', deleted_at: Time.current) }
+
+    describe '.with_deleted' do
+      subject { Post.with_deleted.all.to_a }
+      it { is_expected.to include post }
+      it { is_expected.to include deleted_post }
+    end
+
+    describe '.without_deleted' do
+      subject { Post.without_deleted.all.to_a }
+      it { is_expected.to include post }
+      it { is_expected.not_to include deleted_post }
+    end
+
+    describe '.only_deleted' do
+      subject { Post.only_deleted.all.to_a }
+      it { is_expected.not_to include post }
+      it { is_expected.to include deleted_post }
     end
   end
 end
