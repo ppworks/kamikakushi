@@ -1,3 +1,3 @@
-module Kamiakushi
+module Kamikakushi
   VERSION = "0.0.3"
 end

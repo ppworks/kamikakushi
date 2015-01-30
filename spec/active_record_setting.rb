@@ -4,7 +4,7 @@ ActiveRecord::Base.configurations = {'test' => {:adapter => 'sqlite3', :database
 ActiveRecord::Base.establish_connection :test
 
 class Post < ActiveRecord::Base
-  include Kamiakushi
+  include Kamikakushi
 end
 
 class CreateAllTables < ActiveRecord::Migration

@@ -1,4 +1,4 @@
-module Kamiakushi
+module Kamikakushi
   extend ActiveSupport::Concern
 
   included do
