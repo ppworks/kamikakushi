@@ -16,7 +16,7 @@ post.destroy
 post.destroyed? # true
 post.restore
 post.destroyed? # false
-post.destroy!
+post.purge # real destroy
 post.reload # raise ActiveRecord::RecordNotFound
 ```
 
