@@ -6,7 +6,7 @@ require "kamikakushi/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "kamikakushi"
-  s.version     = Kamiakushi::VERSION
+  s.version     = Kamikakushi::VERSION
   s.authors     = ["ppworks"]
   s.email       = ["koshikawa@ppworks.jp"]
   s.homepage    = "http://ppworks.jp"
