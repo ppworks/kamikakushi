@@ -16,6 +16,19 @@ RSpec.describe Kamikakushi do
         post.reload
       }.to change(post, :deleted_at).from(nil)
     end
+
+    it 'should call before_destroy callback ' do
+      expect {
+        post.protected = true
+        post.destroy
+      }.not_to change(post, :deleted_at).from(nil)
+    end
+
+    it 'should call after_destroy callback' do
+      expect {
+        post.destroy
+      }.to change(post, :comment_after_destroy).from(nil).to('KAMIKAKUSHI')
+    end
   end
 
   describe 'real delete' do
