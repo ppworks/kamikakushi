@@ -21,7 +21,7 @@ RSpec.describe Kamikakushi do
   describe 'real delete' do
     it do
       expect {
-        post.destroy!
+        post.purge
         post.reload
       }.to raise_error(ActiveRecord::RecordNotFound)
     end

@@ -31,7 +31,7 @@ module Kamikakushi
     update_column(:deleted_at, self.deleted_at = nil)
   end
 
-  def destroy!
+  def purge
     destroy_without_kamikakushi
   end
 end
