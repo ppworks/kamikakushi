@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Kamikakushi::VERSION
   s.authors     = ["ppworks"]
   s.email       = ["koshikawa@ppworks.jp"]
-  s.homepage    = "http://ppworks.jp"
+  s.homepage    = "https://github.com/ppworks/kamikakushi"
   s.summary     = "Hide away record as soft delete"
   s.description = "Hide away record as soft delete"
   s.license     = "MIT"
