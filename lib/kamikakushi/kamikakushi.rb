@@ -2,9 +2,6 @@ module Kamikakushi
   module Kamikakushi
     extend ActiveSupport::Concern
 
-    included do
-    end
-
     module ClassMethods
       def kamikakushi(options = {})
         options.reverse_merge!(column_name: :deleted_at)

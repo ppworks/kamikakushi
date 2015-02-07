@@ -4,8 +4,8 @@ module Kamikakushi
 
     module ClassMethods
       def kaonashi(options = {})
-        define_singleton_method(:dependent_parent_name) { options[:parent] }
-        return unless dependent_parent_name
+        define_singleton_method(:kaonashi_parent_name) { options[:parent] }
+        return unless kaonashi_parent_name
 
         class_eval do
           include InstanceMethods
@@ -13,23 +13,23 @@ module Kamikakushi
           alias_method_chain :destroyed?, :kaonashi
 
           scope :with_deleted, -> {
-            join_with_dependent_parent(dependent_parent_name, :with_deleted)
+            join_with_dependent_parent(kaonashi_parent_name, :with_deleted)
           }
 
           scope :without_deleted, -> {
-            join_with_dependent_parent(dependent_parent_name, :without_deleted)
+            join_with_dependent_parent(kaonashi_parent_name, :without_deleted)
           }
 
           scope :only_deleted, -> {
-            join_with_dependent_parent(dependent_parent_name, :only_deleted)
+            join_with_dependent_parent(kaonashi_parent_name, :only_deleted)
           }
         end
       end
 
       private
 
-      def join_with_dependent_parent(dependent_parent_name, scope_name)
-        association =  reflect_on_all_associations.find { |a| a.name == dependent_parent_name }
+      def join_with_dependent_parent(kaonashi_parent_name, scope_name)
+        association =  reflect_on_all_associations.find { |a| a.name == kaonashi_parent_name }
 
         parent_arel = association.klass.arel_table
         joins_conditions = arel_table.join(parent_arel)
@@ -41,7 +41,7 @@ module Kamikakushi
 
     module InstanceMethods
       def destroyed_with_kaonashi?
-        association =  self.class.reflect_on_all_associations.find { |a| a.name == self.class.dependent_parent_name }
+        association =  self.class.reflect_on_all_associations.find { |a| a.name == self.class.kaonashi_parent_name }
         association.klass.with_deleted.find(__send__(association.foreign_key)).destroyed?
       end
     end
