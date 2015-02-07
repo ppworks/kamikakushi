@@ -30,13 +30,12 @@ module Kamikakushi
 
       def join_with_dependent_parent(dependent_parent_name, scope_name)
         association =  reflect_on_all_associations.find { |a| a.name == dependent_parent_name }
-        dependent_parent_class =  association.klass
 
-        parent_arel = dependent_parent_class.arel_table
+        parent_arel = association.klass.arel_table
         joins_conditions = arel_table.join(parent_arel)
                                     .on(parent_arel[:id].eq arel_table[association.foreign_key])
                                     .join_sources
-        joins(joins_conditions).merge(dependent_parent_class.__send__(scope_name))
+        joins(joins_conditions).merge(association.klass.__send__(scope_name))
       end
     end
 
