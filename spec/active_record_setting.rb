@@ -4,7 +4,7 @@ ActiveRecord::Base.configurations = {'test' => {:adapter => 'sqlite3', :database
 ActiveRecord::Base.establish_connection :test
 
 class Post < ActiveRecord::Base
-  include Kamikakushi
+  kamikakushi
   attr_accessor :comment_after_destroy
   before_destroy :set_before_destroy
   after_destroy :set_after_destroy
