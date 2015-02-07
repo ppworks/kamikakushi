@@ -33,8 +33,8 @@ module Kamikakushi
 
         parent_arel = association.klass.arel_table
         joins_conditions = arel_table.join(parent_arel)
-                                    .on(parent_arel[:id].eq arel_table[association.foreign_key])
-                                    .join_sources
+                                     .on(parent_arel[association.klass.primary_key.to_sym].eq arel_table[association.foreign_key])
+                                     .join_sources
         joins(joins_conditions).merge(association.klass.__send__(scope_name))
       end
     end
