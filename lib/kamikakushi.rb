@@ -21,7 +21,7 @@ module Kamikakushi
 
   def destroy_with_kamikakushi
     run_callbacks(:destroy) do
-      update_column(:deleted_at, Time.current)
+      touch(:deleted_at)
     end
   end
 
