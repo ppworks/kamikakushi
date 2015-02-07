@@ -6,6 +6,7 @@ ActiveRecord::Base.establish_connection :test
 class Post < ActiveRecord::Base
   kamikakushi
   attr_accessor :comment_after_destroy
+  has_many :comments
   before_destroy :set_before_destroy
   after_destroy :set_after_destroy
 
