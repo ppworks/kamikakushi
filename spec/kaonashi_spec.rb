@@ -29,16 +29,12 @@ RSpec.describe Kamikakushi::Kaonashi do
 
     describe '.with_deleted' do
       subject { Comment.with_deleted.all.to_a }
-      before do
-      end
       it { is_expected.to include comment }
       it { is_expected.to include deleted_comment }
     end
 
     describe '.without_deleted' do
       subject { Comment.without_deleted.all.to_a }
-      before do
-      end
       it { is_expected.to include comment }
       it { is_expected.not_to include deleted_comment }
     end
