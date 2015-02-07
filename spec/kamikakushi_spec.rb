@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Kamikakushi::Kamikakushi do
-  let!(:post) { Post.create(title: 'demo') }
+  let!(:post) { Post.create(content: 'demo') }
   after { Post.with_deleted.delete_all }
 
   describe 'select record' do
@@ -60,7 +60,7 @@ RSpec.describe Kamikakushi::Kamikakushi do
   end
 
   describe 'scope' do
-    let!(:deleted_post) { Post.create(title: 'deleted', deleted_at: Time.current) }
+    let!(:deleted_post) { Post.create(content: 'deleted', deleted_at: Time.current) }
 
     describe '.with_deleted' do
       subject { Post.with_deleted.all.to_a }
