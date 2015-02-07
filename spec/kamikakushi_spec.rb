@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Kamikakushi do
+RSpec.describe Kamikakushi::Kamikakushi do
   let!(:post) { Post.create(title: 'demo') }
   after { Post.with_deleted.delete_all }
 
