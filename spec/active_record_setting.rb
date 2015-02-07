@@ -18,12 +18,22 @@ class Post < ActiveRecord::Base
   end
 end
 
+class Comment < ActiveRecord::Base
+  kaonashi parent: :post
+  belongs_to :post
+end
+
 class CreateAllTables < ActiveRecord::Migration
   def self.up
     create_table(:posts) do |t|
       t.string :title
       t.boolean :protected
       t.datetime :deleted_at
+    end
+
+    create_table(:comments) do |t|
+      t.integer :post_id
+      t.text :content
     end
   end
 end
