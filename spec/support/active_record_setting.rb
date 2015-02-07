@@ -27,7 +27,7 @@ end
 class CreateAllTables < ActiveRecord::Migration
   def self.up
     create_table(:posts) do |t|
-      t.string :title
+      t.text :content
       t.boolean :protected
       t.datetime :deleted_at
     end
